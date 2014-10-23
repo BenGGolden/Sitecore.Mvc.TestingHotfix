@@ -1,10 +1,9 @@
 Sitecore.Mvc.TestingHotfix
 ==========================
 
-This is a hotfix for an issue with A/B and Multivariate testing in Sitecore 7.x when using MVC.
-There is really only one line of code that needed changing, but because that line was in a pipeline processor that was inherited by another processor, both had to be fixed.
+A/B and MV testing don't work in Sitecore 7.x when using MVC.  I logged this issue the Sitecore support and they confirmed that it is a bug.  This is an unofficial hotfix.
 
-The problem is in the `Sitecore.Mvc.Analytics.Pipelines.Response.CustomizeRendering.SelectVariation` class.
+There is really only one line of code that needed changing, but because that line was in a pipeline processor that was inherited by another processor, both had to be fixed.  The problem is in the `Sitecore.Mvc.Analytics.Pipelines.Response.CustomizeRendering.SelectVariation` class.
 The evaluate method tries to get the test variable item with this line of code:
 
 ```C#
