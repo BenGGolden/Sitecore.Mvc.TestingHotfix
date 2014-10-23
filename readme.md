@@ -1,7 +1,7 @@
 Sitecore.Mvc.TestingHotfix
 ==========================
 
-This is a hotfix for A/B and Multivariate testing in Sitecore MVC.
+This is a hotfix for an issue with A/B and Multivariate testing in Sitecore 7.x when using MVC.
 There is really only one line of code that needed changing, but because that line was in a pipeline processor that was inherited by another processor, both had to be fixed.
 
 The problem is in the `Sitecore.Mvc.Analytics.Pipelines.Response.CustomizeRendering.SelectVariation` class.
