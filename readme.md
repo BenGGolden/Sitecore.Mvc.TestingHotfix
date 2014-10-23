@@ -17,3 +17,4 @@ The variable item is always null as a result and the method aborts.  This proble
 Item variableItem = args.PageContext.Database.GetItem(renderingReference.Settings.GetMultiVariateTestForLanguage(Context.Language));
 ```
 
+[Download the package](Sitecore.Mvc.TestingHotfix-1.0.zip?raw=true)
