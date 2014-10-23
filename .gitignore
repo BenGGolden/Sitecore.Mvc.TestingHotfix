@@ -1,0 +1,7 @@
+*.suo
+*.user
+*.pubxml
+_ReSharper.*
+Settings.StyleCop
+bin
+obj
