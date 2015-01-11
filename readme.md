@@ -1,7 +1,7 @@
 Sitecore.Mvc.TestingHotfix
 ==========================
 
-A/B and MV testing don't work in Sitecore 7.x when using MVC.  You will always see the original content, not the variations configured for your test.  I logged this issue the Sitecore support and they confirmed that it is a bug.  This is an unofficial hotfix.
+A/B and MV testing don't work in Sitecore 7.2 when using MVC.  You will always see the original content, not the variations configured for your test.  I logged this issue the Sitecore support and they confirmed that it is a bug.  This is an unofficial hotfix.
 
 There is really only one line of code that needed changing, but because that line was in a pipeline processor that was inherited by another processor, both had to be fixed.  The problem is in the `Sitecore.Mvc.Analytics.Pipelines.Response.CustomizeRendering.SelectVariation` class.
 The evaluate method tries to get the test variable item with this line of code:
