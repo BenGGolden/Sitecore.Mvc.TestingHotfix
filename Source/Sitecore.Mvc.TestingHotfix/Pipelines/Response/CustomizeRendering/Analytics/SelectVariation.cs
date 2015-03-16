@@ -27,9 +27,14 @@
 
             using (new SecurityDisabler())
             {
-                var variableItem =
-                    args.PageContext.Database.GetItem(
-                        renderingReference.Settings.GetMultiVariateTestForLanguage(Context.Language));
+                var mvVariateTestForLang = renderingReference.Settings.GetMultiVariateTestForLanguage(Context.Language);
+                Sitecore.Data.Items.Item variableItem = null;
+
+                if (mvVariateTestForLang != null)
+                {
+                    variableItem = args.PageContext.Database.GetItem(mvVariateTestForLang);
+                }
+
                 if (variableItem == null)
                 {
                     return;
